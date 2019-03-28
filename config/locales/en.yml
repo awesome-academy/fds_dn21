@@ -1,4 +1,9 @@
 en:
+  error: "Sorry, no data found"
+  error1: "Invalid email/password combination"
+  check: "Please check your email to activate your account."
+  the_form: "The form contains"
+  remember: "Remember me on this computer"
   base:
     base_title: "Food & Drink"
   static_pages:
@@ -7,6 +12,24 @@ en:
     signup: "Sign up"
     signin: "Sign in"
     welcome: "Welcome to FDS!"
-  header:
-  footer:
-    copywrite: "Copywrite by: OE21 - Ruby Teams"
+    sign: "Sign up now!"
+    users: "Users"
+    account: "Account"
+    profile: "Profile"
+    settings: "Settings"
+    logout: "Log out"
+  layouts:
+    header:
+      title4: "Log in"
+    footer:
+      copywrite: "Copywrite by: OE21 - Ruby Teams"
+  sessions:
+    new:
+      new_user: "New user? "
+  users:
+    new:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password_confirmation"
+      create: "Create my account"
