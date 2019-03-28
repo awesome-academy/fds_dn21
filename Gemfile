@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
-ruby "2.3.1"
+ruby "2.5.1"
 
 gem "rubocop", "~> 0.54.0", require: false
 
