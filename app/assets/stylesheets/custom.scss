@@ -1,5 +1,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'font-awesome-sprockets.css';
+@import 'font-awesome.css';
 @import 'login';
 @import 'sidebar';
 @import 'admin/all';
@@ -34,6 +36,9 @@ body {
       padding-left: 200px;
       .page-content {
         padding-left: 50px;
+        .body-content {
+          min-height: 720px;
+        }
       }
     }
   }

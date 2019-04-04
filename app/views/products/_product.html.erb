@@ -1,0 +1,17 @@
+<div class="col-md-3 category__item">
+  <div class="">
+    <%= link_to product.name, admin_product_path(product) %>
+  </div>
+  <% if logged_in? %>
+    <%= link_to "#", method: :delete, remote: true, class: "category_delete-btn" do %>
+      <button type="button" class="add-to-cart-mt">
+            <%= link_to cart_path(product_id: @product_id), method: :post do %>
+              <i class="fa fa-shopping-cart"></i>
+              <span><%= t ".add_to_cart" %></span>
+            <% end %>
+      </button>
+    <% end %>
+  <% end %>
+<%= image_tag product.picture.url %>
+<div><%= product.price %></div>
+</div>

@@ -6,13 +6,17 @@ Rails.application.routes.draw do
 
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
-
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
-
   delete "/logout", to: "sessions#destroy"
 
+  get "/admin", to: "admin/admins#index"
+  get "/welcome", to: "client/clients#index"
+
   resources :users
+  resources :products
+  resources :categories
+  resource :cart
 
   namespace :admin do
     root "admins#index"
@@ -20,12 +24,8 @@ Rails.application.routes.draw do
     resources :products
   end
 
-  get "/admin", to: "admin/admins#index"
-
   namespace :client do
     root "clients#index"
   end
-
-  get "/welcome", to: "client/clients#index"
 
 end

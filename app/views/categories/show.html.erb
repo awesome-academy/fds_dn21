@@ -1,0 +1,10 @@
+<div class="show_child_items containter">
+  <div class="row">
+    <h3>Related Category</h3>
+    <%= render @categories %>
+  </div>
+  <div class="row">
+    <h3>Products</h3>
+    <%= render partial: "./products/product", collection: (@products), as: :product %>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<tr>
+  <td class="cart_product">
+    <%= link_to order_product.product do %>
+      <%= image_tag order_product.product_picture %>
+    <% end %>
+  </td>
+  <td class="cart_description">
+    <p class="product-name">
+      <%= link_to order_product.product do %>
+        <%= order_product.product_name %>
+      <% end %>
+    </p>
+  </td>
+  <td class="price"><span><%= order_product.product_price %></span></td>
+  <td class="action">
+    <%= link_to cart_path(product_id: order_product.product_id), method: :delete, data: {confirm: t(".you_sure")} do %>
+      <span class="glyphicon glyphicon-trash"></span>
+    <% end %>
+  </td>
+</tr>
