@@ -27,5 +27,14 @@
         <span><%= t "generals.my_history" %></span>
       </a>
     </li>
+    <div class="basket dropdown-toggle">
+      <%= link_to client_carts_path do %>
+        <div class="cart-icon"><i class="fa fa-shopping-cart"></i></div>
+        <div class="shoppingcart-inner hidden-xs">
+          <span class="cart-title"><%= t ".cart" %></span>
+          <span class="cart-total"><%= t ".items", item: current_order.size %></span>
+        </div>
+      <% end %>
+    </div>
   </ul>
 </div>
