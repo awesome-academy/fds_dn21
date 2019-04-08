@@ -1,0 +1,20 @@
+<div class="order-detail-content">
+  <div class="table-responsive">
+    <table class="table table-bordered cart_summary">
+      <thead>
+        <tr>
+          <th><%= t ".product" %></th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".price" %></th>
+          <th><%= t ".quantity" %></th>
+          <th><%= t ".function" %></th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="cart_navigation">
+      <%= link_to orders_path, class: "checkout-btn", method: :post do %>
+        <i class="fa fa-check"></i><%= t ".checkout" %>
+    <% end %>
+  </div>
+</div>

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :users
   resources :products
   resources :categories
+  resource :cart
 
   namespace :admin do
     root "admins#index"
