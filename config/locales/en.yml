@@ -7,6 +7,23 @@ en:
   update: "Profile updated"
   delete: "User deleted"
   undelete: "unsuccess delete"
+  added: "Added"
+  success_add: "Added success"
+  success_delete: "Deleted sucess"
+  not_found_product: "Not found product"
+  out_quantity: "out of quantity"
+  please_order: " - Please order only what's available"
+  shopping_title: "Shopping cart"
+  cart_product: "Cart product"
+  product: "Product"
+  name: "Name"
+  price: "Price"
+  quantity: "Quantity"
+  action: "Action"
+  back: "back"
+  checkout: "checkout"
+  info_product: "Information Product"
+  out: "out of quantity"
   base:
     base_title: "Food & Drink"
   generals:
@@ -53,6 +70,8 @@ en:
     admin_title: "Product | Admin"
     client_title: "Product | Client"
     add_to_cart: "Add to cart"
+    number: "number"
+    add: "Add"
   users:
     user_pic: "User picture"
     new:
@@ -88,6 +107,9 @@ en:
       copywrite: "Copywrite by: OE21 - Ruby Teams"
     sidebar:
       all_products: "All Products"
+    client_sidebar:
+      cart: "Cart"
+      items: "%{item} Item(s)"
   sessions:
     new:
       new_user: "New user? "

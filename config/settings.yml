@@ -8,3 +8,4 @@ paging: 10
 per_page: 5
 sizeindex: 50
 per_index: 1
+lowest_quantity: 0

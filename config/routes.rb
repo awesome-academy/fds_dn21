@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   namespace :client do
     root "clients#index"
+    resources :carts
   end
 
 end

@@ -1,0 +1,60 @@
+<% provide :title, t("shopping_title") %>
+
+  <div class="cart">
+    <div class="page-content page-order">
+      <div class="page-title">
+        <h2><%= t "cart_product" %></h2>
+      </div>
+      <div class="order-product-content">
+        <div class="table-responsive">
+          <table class="table table-bordered cart_summary">
+            <thead>
+              <tr>
+                <th class="cart_product"><%= t "product" %></th>
+                <th class="cart_name"><%= t "name" %></th>
+                <th class="cart_price"><%= t "price" %></th>
+                <th class="cart_quantity"><%= t "quantity" %></th>
+                <th class="action"><%= t "action" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @items.each do |item| %>
+                <tr>
+                  <td class="cart_product">
+                      <%= image_tag item.product.picture.url %>
+                  </td>
+                  <td class="cart_name">
+                    <p class="product-name">
+                      <%= link_to products_path(item.product.name) do %>
+                        <%= item.product.name %>
+                      <% end %>
+                    </p>
+                  </td>
+                  <td class="cart_price">
+                    <span><%= item.price %></span>
+                  </td>
+                  <td class="cart_quantity">
+                    <span><%= item.quantity %></span>
+                  </td>
+                  <td class="action">
+                    <%= link_to client_cart_path(item.product_id), method: :delete,
+                      data: {confirm: t("admin.users.index.confirm")} do %>
+                      <span class="glyphicon glyphicon-trash"></span>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="cart_navigation">
+          <%= link_to products_path do %>
+            <span class="cart-title"><%= t "back" %></span>
+          <% end %>
+          <a class="checkout-btn" href="#">
+            <i class="fa fa-check"></i><%= t "checkout" %>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
