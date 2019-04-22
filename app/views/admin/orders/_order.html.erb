@@ -1,0 +1,38 @@
+<tr>
+  <td class="" colspan="3">
+    <b>
+      <%= order.user_name %></b>
+  </td>
+  <td>
+    <div class="update_status" id="update_status<%= order.id %>">
+      <%= render_status order %>
+    </div>
+  </td>
+</tr>
+  <td colspan="3">
+    <table class="product_table">
+      <tbody>
+        <%= render partial: "order_product", collection: (order.order_products), as: :item %>
+      </tbody>
+    </table>
+  </td>
+  <td colspan="1" class="admin_order_info">
+    <div class="">
+      <%= t "users.new.name" %>: <b><%= order.user_name %></b>
+    </div>
+    <div class="">
+      <%= t "users.new.address" %>: <%= order.user_address %>
+    </div>
+    <div class="">
+      <%= t "users.new.phone" %>: <%= order.user_phone %>
+    </div>
+  </td>
+<tr>
+  <td class="" colspan="3">
+    <%= t "carts.total" %>:
+    <b><%= number_to_currency(load_total_cost order) %></b>
+  </td>
+</tr>
+<tr>
+  <td colspan="4" class="blank_row"></td>
+</tr>

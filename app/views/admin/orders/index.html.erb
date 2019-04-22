@@ -1,0 +1,21 @@
+<% provide :title, t("order.order_history") %>
+
+  <div class="cart">
+    <div class="page-order">
+      <div class="page-title">
+        <h2><%= t "order_history" %></h2>
+      </div>
+      <div class="order-product-content">
+        <div class="table-responsive">
+          <table class="table table-bordered order_summary">
+            <tbody>
+              <%= render @orders %>
+            </tbody>
+          </table>
+        </div>
+        <div class="row paginate">
+          <%= paginate @orders, theme: "twitter-bootstrap-4" %>
+        </div>
+      </div>
+    </div>
+  </div>

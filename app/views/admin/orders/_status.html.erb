@@ -1,0 +1,3 @@
+<%= link_to order.status, admin_order_path(order.id),
+  method: :patch, remote: true, class: "btn btn-#{render_status_label order}" %>
+at <%= l(order.created_at, format: :short) %>

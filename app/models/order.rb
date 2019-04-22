@@ -8,4 +8,6 @@ class Order < ApplicationRecord
     where user_id: user.id
   end)
   scope :order_by_created_time, ->{order created_at: :desc}
+
+  delegate :name, :address, :phone, to: :user, prefix: :user
 end

@@ -15,6 +15,7 @@ class Client::OrdersController < Client::ClientsController
         create_order_product @product, value, @order.id
       end
       session[:cart].clear
+      send_message
       flash[:success] = t "flash.ordered"
       redirect_to client_orders_path
     end
@@ -48,5 +49,14 @@ class Client::OrdersController < Client::ClientsController
     return if order_product.save
     flash[:warning] = t "flash.cannot_save"
     redirect_to client_orders_path
+  end
+
+  def send_message
+    ChatWork.api_key = "269ca48e09182e7a71511998f528e8bc"
+    name = ChatWork::Me.get["name"]
+    account_id = ChatWork::Me.get["account_id"]
+    room_id = ChatWork::Me.get["room_id"]
+    message_body = "[To:#{account_id}] #{name}\nWell done! You have successfully sent a message using ChatWork's API!"
+    ChatWork::Message.create room_id: room_id, body: message_body
   end
 end

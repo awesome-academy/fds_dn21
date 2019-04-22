@@ -5,5 +5,9 @@ module MyModules
         a + e[:quantity] * e[:price]
       end
     end
+
+    def price_of_each_item price, quantity
+      price * quantity
+    end
   end
 end

@@ -45,10 +45,10 @@ end
 
 2.times do |n|
   users = [2, 3]
-  status = 3
+  status = [0, 3]
   Order.create!(
     user_id: users[n],
-    status: 3)
+    status: status[n])
 end
 
 4.times do |n|

@@ -1,0 +1,14 @@
+<tr>
+  <td class="admin_order_product admin_item">
+    <span>- <%= item.product_name %></span>
+  </td>
+  <td class="admin_order_price admin_item">
+    <span><%= item.price %></span>
+  </td>
+  <td class="admin_order_quantity admin_item">
+    <span><%= item.quantity %></span>
+  </td>
+  <td class="admin_item">
+    <span><%= price_of_each_item item.price, item.quantity %></span>
+  </td>
+</tr>

@@ -1,0 +1,2 @@
+var element = $("#update_status<%= @order.id %>");
+element.html('<%= j render "status", order: @order %>');
