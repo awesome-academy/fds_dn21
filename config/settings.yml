@@ -20,3 +20,5 @@ order_ready_label: "primary"
 order_accepted_label: "warning"
 order_delivering_label: "info"
 order_delivered_label: "success disabled"
+clasify_food: 2
+clasify_drink: 3

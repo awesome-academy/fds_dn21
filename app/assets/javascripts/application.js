@@ -13,6 +13,12 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree
 //= require jquery
 //= require bootstrap
+
+//= require js/vendor/modernizr-3.5.0.min.js
+//= require js/popper.min.js
+//= require js/bootstrap.min.js
+//= require js/plugins.js
+//= require js/active.js
+//= require vendor/adminlte.min

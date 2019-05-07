@@ -1,4 +1,17 @@
-<div class="col-md-3 category__item">
-  <%= link_to category.name, category_path(category) %>
-  <%= image_tag category.picture.url %>
+<div class="col-lg-3 col-sm-6 col-md-4">
+  <div class="menu__grid__item wow fadeInLeft category_item">
+    <div class="menu__grid__thumb">
+      <%= link_to category_path(category) do %>
+        <%= image_tag category.picture.url %>
+      <% end %>
+      </a>
+    </div>
+    <div class="menu__grid__inner">
+      <div class="menu__grid__details">
+        <h2>
+          <a href="menu-details.html"><%= category.name %></a>
+        </h2>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,10 +1,12 @@
-<div class="show_child_items containter">
-  <div class="row">
-    <h3><%= t "categories.relate_category" %></h3>
-    <%= render @categories %>
-  </div>
-  <div class="row">
-    <h3><%= t "generals.products" %></h3>
-    <%= render partial: "./products/product", collection: (@products), as: :product %>
-  </div>
-</div>
+
+
+  <section class="food__menu__grid__area section-padding--lg">
+    <div class="container">
+      <div class="row mt--30">
+        <%= render @categories %>
+      </div>
+      <div class="row mt--30">
+         <%= render partial: "./products/product", collection: (@products), as: :product %>
+      </div>
+    </div>
+  </section>

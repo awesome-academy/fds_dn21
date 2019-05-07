@@ -34,8 +34,8 @@ en:
     order: "Order"
     order_list: "Order list"
     users: "Users"
-    food: "Food"
-    drink: "Drink"
+    food: "Foods"
+    drink: "Drinks"
     admin: "admin"
     active: "active"
     admins: "Administrator"
@@ -45,6 +45,8 @@ en:
     guest: "Guest"
     edit: "Edit"
     on: "on"
+    image: "Image"
+    statistic: "Statistic"
   flash:
     created: "Created"
     not_found: "Not found"
@@ -71,9 +73,12 @@ en:
     client_title: "Category | Client"
     add_new: "Add new category"
     relate_category: "Related Category"
+    all_categories: "All Categories"
   carts:
     currency: "$"
     total: "Total"
+    grand_total: "Grand total"
+    checkout: "Check out"
   order:
     order_history: "Order History"
     status: "Status"
