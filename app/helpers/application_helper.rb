@@ -12,6 +12,10 @@ module ApplicationHelper
     end
   end
 
+  def current_order
+    session[:cart] ||= {}
+  end
+
   def render_side_bar
     if logged_in?
       if current_user.admin?

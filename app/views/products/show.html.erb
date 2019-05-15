@@ -1,30 +1,107 @@
-<% provide :title, t("info_product") %>
-<% if logged_in? && current_user.active? %>
-  <div class="row add_cart_form">
-    <div class="col-md-4">
-      <div class="add_form_error">
+<section class="blog__list__view section-padding--lg menudetails-right-sidebar bg--white">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 col-sm-12">
+        <div class="food__menu__container">
+          <div class="food__menu__inner d-flex flex-wrap flex-md-nowrap flex-lg-nowrap">
+            <div class="food__menu__thumb">
+              <%= image_tag @product.picture.url, class: "product_image"%>
+            </div>
+            <div class="food__menu__details">
+              <div class="food__menu__content">
+                <h2><%= @product.name %></h2>
+                <ul class="food__dtl__prize d-flex">
+                  <li class="old__prize"><%= @product.price %></li>
+                </ul>
+                <ul class="rating">
+                  <li>
+                    <i class="fa fa-star"></i>
+                  </li>
+                  <li>
+                    <i class="fa fa-star"></i>
+                  </li>
+                  <li>
+                    <i class="fa fa-star"></i>
+                  </li>
+                  <li>
+                    <i class="fa fa-star"></i>
+                  </li>
+                  <li>
+                    <i class="fa fa-star"></i>
+                  </li>
+                </ul>
+                <p><%= @product.information %></p>
+                <div class="product-action-wrap">
+                  <div class="prodict-statas">
+                    <span><%= t "products.food_type" %> :
+                      <%= @product.category_name %></span></div>
+                  <div class="product-quantity">
+                    <form id='myform' method='POST' action='#'>
+                      <div class="product-quantity">
+                        <div class="cart-plus-minus">
+                          <input class="cart-plus-minus-box" type="text" name="qtybutton" value="02">
+                          <div class="add__to__cart__btn">
+                            <a class="food__btn" href="cart.html"> <%= t "products.add_to_cart" %></a>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="row add_cart_form">
+                      <div class="col-md-4">
+                        <div class="add_form_error">
+                        </div>
+                        <%= render "products/add_form"%>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu__descrive__area">
+          <div class="menu__nav nav nav-tabs" role="tablist">
+            <a class="active" id="nav-all-tab" data-toggle="tab" href="#nav-all" role="tab"> <%= t "products.info" %></a>
+            <a id="nav-breakfast-tab" data-toggle="tab" href="#nav-breakfast" role="tab"> <%= t "products.reviews" %></a>
+          </div>
+          <div class="menu__nav nav nav-tabs">
+            <%if is_allow_to_rate?(@product) %>
+              <%= render "client/rates/form" %>
+            <% end %>
+          </div>
+
+          <div class="menu__tab__content tab-content" id="nav-tabContent">
+            <div class="single__dec__content fade" id="nav-breakfast" role="tabpanel">
+              <div class="review__wrapper">
+                <div class="single__review d-flex">
+                  <div class="review__thumb">
+                    <img src="/assets/testimonial/rev/1.jpg" alt="review images">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
-      <%= render "products/add_form"%>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="popupal__menu">
+            <h4><%= t "products.popular_menu" %></h4>
+          </div>
+        </div>
+      </div>
+      <div class="row mt--30">
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-12 col-sm-12 md--mt--40 sm--mt--40">
+      <div class="food__sidebar">
+        <div class="food__category__area mt--60">
+          <h4 class="side__title"> <%= t "generals.categories" %></h4>
+          <ul class="food__category">
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-<% end %>
-<h3><%= @product.name %></h3>
-<h5><%= t "rating.rate" %>: <%= load_everage(@product) %></h5>
-<h5><%= t "products.price" %>: <%= @product.price %></h5>
-<h5><%= t "generals.category" %>: <%= @product.category_name %></h5>
-<h5><%= t "products.quantity" %>: <%= @product.quantity %></h5>
-<h5><%= t "products.info" %>: <%= @product.information %></h5>
-<div class="">
-  <%= image_tag @product.picture.url  %>
 </div>
-<h3><%= t ("rating.comments"), count: @rates.size %></h3>
-<div class="row" style="">
-  <%if is_allow_to_rate?(@product) %>
-    <%= render "client/rates/form" %>
-  <% end %>
-</div>
-<div class="rates row">
-  <div>
-    <%= render partial: "client/rates/rate", collection: @rates %>
-  </div>
-</div>
+</section>

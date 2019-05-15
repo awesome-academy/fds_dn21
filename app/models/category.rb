@@ -11,6 +11,9 @@ class Category < ApplicationRecord
   scope :load_child_categories, (lambda do |category|
     where parent_id: category.id
   end)
+  scope :load_categories_by_classify, (lambda do |classify|
+    where parent_id: classify
+  end)
 
   private
 

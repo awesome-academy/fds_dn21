@@ -1,0 +1,47 @@
+  <div class="cartbox-wrap">
+    <div class="cartbox text-right">
+      <button class="cartbox-close">
+        <i class="zmdi zmdi-close"></i>
+      </button>
+      <div class="cartbox__inner text-left">
+        <div class="cartbox__items">
+          <% @items.each do |key, value| %>
+            <div class="cartbox__item">
+              <div class="cartbox__item__thumb">
+                <a href="product-details.html">
+                  <%= image_tag value[:product].picture.url %>
+                </a>
+              </div>
+              <div class="cartbox__item__content">
+                <h5>
+                  <%= link_to products_path, class: "product-name" do %>
+                    <%= value[:product].name %>
+                  <% end %>
+                </h5>
+                <p>Qty:
+                  <span><%= value[:quantity] %></span></p>
+                <span class="price">$<%= value[:product].price %></span>
+              </div>
+              <button class="cartbox__item__remove">
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+          <% end %>
+        </div>
+        <div class="cartbox__total">
+          <ul>
+            <li class="grandtotal">Total<span class="price">$<%= @total %></span></li>
+          </ul>
+        </div>
+        <div class="cartbox__buttons">
+
+          <a class="food__btn" href="client/carts">
+            <span>View cart</span></a>
+          <%= link_to client_orders_path, method: :post, class: "food__btn",
+            data: {confirm: t(".you_sure")} do %>
+            <span><%= t "order.order" %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

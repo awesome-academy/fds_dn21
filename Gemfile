@@ -5,6 +5,8 @@ ruby "2.3.1"
 
 gem "pry", "~> 0.12.2"
 
+gem "font-awesome-rails"
+
 gem "kaminari"
 
 gem "bootstrap4-kaminari-views"

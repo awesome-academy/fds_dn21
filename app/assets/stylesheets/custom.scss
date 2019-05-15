@@ -1,49 +1,16 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-@import 'login';
-@import 'sidebar';
-@import 'admin/all';
-@import 'show';
+@import 'vendor/bootstrap.min';
+@import 'vendor/plugins';
+@import 'vendor/style';
+@import 'vendor/spacing.min';
 
-.logo {
-  float: left;
-  margin-right: 10px;
-  padding-top: 9px;
-  width: 100px;
-
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
+.category_item {
+  margin-top: 0px;
+  visibility: visible;
+  animation-name: fadeInLeft;
 }
 
-header {
-  font-size: 15px;
-}
-
-nav {
-  margin-top: 40px;
-}
-
-body {
-  font-size: 15px;
-  margin-top: 100px;
-  padding-top: 5px;
-
-  .page-wrapper {
-    .container {
-      padding-left: 200px;
-      .page-content {
-        padding-left: 50px;
-        .body-content {
-          min-height: 720px;
-        }
-      }
-    }
-  }
-}
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
+.product_image {
+  width: 350px;
 }

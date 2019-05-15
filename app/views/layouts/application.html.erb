@@ -1,25 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= full_title yield(:title) %></title>
-    <%= render "layouts/head" %>
-  </head>
-
-  <body>
-    <%= render "layouts/header" %>
-    <div class="page-wrapper chiller-theme toggled">
-      <%= render "layouts/sidebar" %>
-      <div class="container">
-        <% flash.each do |message_type, message| %>
-          <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-        <% end %>
-        <main class="page-content main">
-        <div class="body-content">
-          <%= yield %>
-        </div>
-        <%= render "layouts/footer" %>
-      </main>
-      </div>
-    </div>
-  </body>
-</html>
+<% if logged_in? && current_user.admin? %>
+  <%= render "layouts/admin/application" %>
+<% else %>
+  <%= render "layouts/client/application" %>
+<% end %>

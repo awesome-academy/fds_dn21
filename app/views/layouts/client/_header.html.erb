@@ -1,0 +1,99 @@
+<header class="htc__header bg--white">
+  <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-sm-4 col-md-6 order-1 order-lg-1">
+          <div class="logo">
+            <a href="index.html">
+              <img src="/assets/logo/foody.png" alt="logo images">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-9 col-sm-4 col-md-2 order-3 order-lg-2">
+          <div class="main__menu__wrap">
+            <nav class="main__menu__nav d-none d-lg-block">
+              <ul class="mainmenu">
+                <li class="drop">
+                  <a href="index.html"><%= t "static_pages.home" %></a>
+                </li>
+                <li class="drop">
+                  <a href="menu-list.html"><%= t "generals.food" %></a>
+                  <ul class="dropdown__menu">
+                    <% foods.map do |drink| %>
+                      <li>
+                        <%= link_to food.name, category_path(food) %>
+                      </li>
+                    <% end %>
+                  </ul>
+                </li>
+                <li class="drop">
+                  <a href="menu-list.html"><%= t "generals.drink" %></a>
+                  <ul class="dropdown__menu">
+                    <% drinks.map do |drink| %>
+                      <li>
+                        <%= link_to drink.name, category_path(drink) %>
+                      </li>
+                    <% end %>
+                  </ul>
+                </li>
+                <li>
+                  <a href="gallery.html"><%= t "generals.my_history" %></a>
+                </li>
+                <li>
+                  <a href="gallery.html"><%= t "generals.suggestion" %></a>
+                </li>
+                <li>
+                  <a href="contact.html"><%= t "static_pages.contact" %></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
+          <div class="header__right d-flex justify-content-end">
+            <% if logged_in? %>
+              <div class="">
+                <div class="main__menu__wrap">
+                  <nav class="main__menu__nav d-none d-lg-block">
+                    <ul class="mainmenu">
+                      <li class="drop">
+                        <a class="" href="#">
+                          <i class="zmdi zmdi-account-o"></i>
+                        </a>
+                        <ul class="dropdown__menu">
+                          <li><%= link_to t("static_pages.profile"), admin_user_path(current_user) %></li>
+                          <li><%= link_to t("static_pages.settings"), edit_user_path(current_user) %></li>
+                          <li class="divider"></li>
+                          <li>
+                            <%= link_to t("static_pages.logout"), logout_path, method: :delete %>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            <% else %>
+              <div class="log__in">
+                <a class="accountbox-trigger" href="#">
+                  <i class="zmdi zmdi-account-o"></i>
+                </a>
+              </div>
+            <% end %>
+            <% if logged_in? %>
+              <div class="shopping__cart">
+                <a class="minicart-trigger" href="#">
+                  <i class="zmdi zmdi-shopping-basket"></i>
+                </a>
+                <div class="shop__qun">
+                  <span><%= @items.size %></span>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-menu d-block d-lg-none"></div>
+    </div>
+  </div>
+</header>

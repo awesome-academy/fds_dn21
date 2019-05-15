@@ -1,14 +1,11 @@
 <% provide :title, t("categories.client_title") %>
-  <div class="containter">
-    <div class="categories">
-    <div class="row">
-      <div class="category_new_form"></div>
+  <section class="food__menu__grid__area section-padding--lg">
+    <div class="container">
+      <div class="row mt--30">
+        <%= render @categories %>
+      </div>
+      <div class="row paginate">
+        <%= paginate @categories, theme: "twitter-bootstrap-4" %>
+      </div>
     </div>
-    <div class="row categories_items">
-      <%= render @categories %>
-    </div>
-    <div class="row paginate">
-      <%= paginate @categories, theme: "twitter-bootstrap-4" %>
-    </div>
-  </div>
-</div>
+  </section>
