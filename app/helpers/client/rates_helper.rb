@@ -1,7 +1,7 @@
 module Client::RatesHelper
   include MyModules::Rates
   def is_allow_to_rate? product
-    return false if !logged_in? ||
+    return false if !user_signed_in? ||
                     current_user.admin? ||
                     current_user.rates.find_by(product_id: product.id)
     current_user.orders.each do |order|

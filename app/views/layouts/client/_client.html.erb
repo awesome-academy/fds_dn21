@@ -1,10 +1,9 @@
-<div class="wrapper" id="wrapper">
-  
+<div class="wrapper box__layout" id="wrapper">
+  <%= render "layouts/client/header", drinks: @drinks, foods: @foods, items: @items %>
   <%= render "layouts/client/banner" %>
   <div class="">
     <%= yield %>
-    <%= render "layouts/client/footer" %>
   </div>
-  <%= render "layouts/login_form" %>
-  <%= render "layouts/client/cart" %>
+  <%= render "layouts/client/login_form" %>
+  <%= render "layouts/client/cart", items: @items %>
 </div>

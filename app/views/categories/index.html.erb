@@ -1,11 +1,17 @@
 <% provide :title, t("categories.client_title") %>
-  <section class="food__menu__grid__area section-padding--lg">
-    <div class="container">
-      <div class="row mt--30">
-        <%= render @categories %>
-      </div>
-      <div class="row paginate">
-        <%= paginate @categories, theme: "twitter-bootstrap-4" %>
-      </div>
-    </div>
-  </section>
+<section>
+    2
+    <%= sort_link(@q, :name) do %>
+    <strong>Player Name</strong>
+  <% end %>
+</section>
+<section class="food__menu__grid__area section-padding--lg">
+<div class="container">
+  <div class="row mt--30">
+    <%= render @categories %>
+  </div>
+  <div class="row paginate">
+    <%= paginate @categories, theme: "twitter-bootstrap-4" %>
+  </div>
+</div>
+</section>

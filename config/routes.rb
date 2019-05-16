@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
 
-  root "static_pages#home"
+  root "categories#index"
+
+  devise_for :users, controllers: {
+    registrations: "registrations",
+    sessions: "sessions",
+    passwords: "passwords",
+    confirmations: "confirmations"
+  }
 
   get "/contact", to: "static_pages#contact"
-
-  get "/signup", to: "users#new"
-  post "/signup", to: "users#create"
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
 
   get "/admin", to: "admin/admins#index"
   get "/welcome", to: "client/clients#index"
@@ -22,7 +23,6 @@ Rails.application.routes.draw do
     resources :users
     resources :categories
     resources :products
-    resources :orders
   end
 
   namespace :client do

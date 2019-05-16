@@ -1,17 +1,18 @@
-<div class="ht__bradcaump__area bg-image--18">
-  <div class="ht__bradcaump__wrap d-flex align-items-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <div class="bradcaump__inner text-center">
-            <h2 class="bradcaump-title" style="color: white"></h2>
-            <nav class="bradcaump-inner">
-              <a class="breadcrumb-item" href="index.html"></a>
-              <span class="brd-separetor">
-                <i class="zmdi zmdi-long-arrow-right"></i>
-              </span>
-              <span class="breadcrumb-item active"></span>
-            </nav>
+<div class="slide fullscreen bg-image--1">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="slider__content">
+          <div class="slider__inner">
+            <h2>“AAHAR”</h2>
+            <h1>food delivery &amp; service</h1>
+            <%= search_form_for @q do |f| %>
+              <div class="slider__input">
+                <%= f.text_field :name_cont, class: "", placeholder: "Type" %>
+
+                <%= f.submit "Search", class: "src__btn res__search" %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>

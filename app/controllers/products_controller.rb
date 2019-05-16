@@ -2,7 +2,10 @@ class ProductsController < ApplicationController
   before_action :load_all_products, only: :index
   before_action :load_product, :build_rate, :load_rates, only: :show
 
-  def index; end
+  def index
+    @q = Product.ransack(params[:q])
+    @products = @q.result.page(params[:page])
+  end
 
   def show
     @order_product = OrderProduct.new

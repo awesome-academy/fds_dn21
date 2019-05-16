@@ -1,4 +1,4 @@
-class Client::RatesController < ApplicationController
+class Client::RatesController < Client::ClientsController
   def create
     @rate = Rate.new rate_params
     if @rate.save

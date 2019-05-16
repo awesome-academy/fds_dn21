@@ -3,7 +3,10 @@ class CategoriesController < ApplicationController
     :load_child_categories, only: :show
   before_action :load_all_categories, only: :index
 
-  def index; end
+  def index
+    @q = Category.ransack(params[:q])
+    @categories = @q.result.page(params[:page])
+  end
 
   def show; end
 

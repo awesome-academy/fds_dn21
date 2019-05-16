@@ -1,4 +1,4 @@
-class Admin::ProductsController < ApplicationController
+class Admin::ProductsController < Admin::AdminsController
   before_action :load_product, except: %i(index new create)
   before_action :load_all_products, except: %i(show edit update)
   before_action :load_all_categories, only: %i(new edit)

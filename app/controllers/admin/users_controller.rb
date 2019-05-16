@@ -1,4 +1,4 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::AdminsController
   before_action :load_user, :is_admin?, only: :destroy
 
   def index
