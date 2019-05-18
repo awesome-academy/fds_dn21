@@ -1,6 +1,6 @@
 <% provide :title, t("products.admin_title") %>
 
-<% if logged_in? && current_user.active? %>
+<% if user_signed_in? && current_user.active? %>
   <%= link_to "#" do %>
     <span class="glyphicon glyphicon-plus"><%= t "products.add_to_cart"%></span>
   <% end %>

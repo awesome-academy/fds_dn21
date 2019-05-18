@@ -51,7 +51,7 @@
         </div>
         <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
           <div class="header__right d-flex justify-content-end">
-            <% if logged_in? %>
+            <% if user_signed_in? %>
               <div class="">
                 <div class="main__menu__wrap">
                   <nav class="main__menu__nav d-none d-lg-block">
@@ -65,7 +65,7 @@
                           <li><%= link_to t("static_pages.settings"), edit_user_path(current_user) %></li>
                           <li class="divider"></li>
                           <li>
-                            <%= link_to t("static_pages.logout"), logout_path, method: :delete %>
+                            <%= link_to t("static_pages.logout"), destroy_user_session_path, method: :delete %>
                           </li>
                         </ul>
                       </li>
@@ -80,7 +80,7 @@
                 </a>
               </div>
             <% end %>
-            <% if logged_in? %>
+            <% if user_signed_in? %>
               <div class="shopping__cart">
                 <a class="minicart-trigger" href="#">
                   <i class="zmdi zmdi-shopping-basket"></i>

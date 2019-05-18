@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap
-
+//= require login
 //= require js/vendor/modernizr-3.5.0.min.js
 //= require js/popper.min.js
 //= require js/bootstrap.min.js

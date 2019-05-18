@@ -1,0 +1,16 @@
+<%= form_for(@user, as: :user, url: confirmation_path(:user), html: { method: :post }, remote: true) do |f| %>
+  <div class="single-input">
+    <h4><%= t "devise.confirm.confirm" %></h4>
+  </div>
+  <div id="reset_errors">
+  </div>
+
+  <div class="single-input">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+  </div>
+
+  <div class="single-input">
+    <%= f.submit "Resend confirmation instructions" %>
+  </div>
+<% end %>

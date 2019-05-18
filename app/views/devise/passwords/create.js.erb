@@ -1,0 +1,9 @@
+<% if @sented %>
+  $('.accountbox__options').removeClass('show');
+  $('.accountbox__options').removeClass('active');
+  $('.accountbox__login').addClass('show');
+  alert('Check your email and try to login again my fen')
+  $('#reset_errors').html('');
+<% else %>
+<% end %>
+$('#reset_errors').html('<%= j render "shared/error_messages" %>');

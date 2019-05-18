@@ -25,13 +25,13 @@ end
 end
 
 User.create!(name: "Nguyen Van Ky Phong", email: "nguyenvankyphong@gmail.com", address: "DN",
-  phone: "0123456789", password: "111111", password_confirmation: "111111", role: 1)
+  phone: "0123456789", password: "111111", password_confirmation: "111111", role: 1, confirmed_at: Time.now)
 
 User.create!(name: "client", email: "client@gmail.com", address: "DN",
-  phone: "0123456789", password: "111111", password_confirmation: "111111", role: 0)
+  phone: "0123456789", password: "111111", password_confirmation: "111111", role: 0, confirmed_at: Time.now)
 
 User.create!(name: "Ky Phong", email: "phong@gmail.com", address: "DN",
-  phone: "0123456789", password: "111111", password_confirmation: "111111", role: 0)
+  phone: "0123456789", password: "111111", password_confirmation: "111111", role: 0, confirmed_at: Time.now)
 
 5.times do |n|
   name = "example user"
@@ -40,7 +40,7 @@ User.create!(name: "Ky Phong", email: "phong@gmail.com", address: "DN",
   phone = "0123456789"
   password = "111111"
   User.create!(name: name, email: email, address: address, phone: phone, password: password,
-    password_confirmation: password)
+    password_confirmation: password, confirmed_at: Time.now)
 end
 
 2.times do |n|

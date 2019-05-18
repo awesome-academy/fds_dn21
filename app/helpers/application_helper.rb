@@ -16,15 +16,11 @@ module ApplicationHelper
     session[:cart] ||= {}
   end
 
-  def render_side_bar
-    if logged_in?
-      if current_user.admin?
-        render "layouts/admin_sidebar"
-      else
-        render "layouts/client_sidebar"
-      end
+  def render_application
+    if user_signed_in? && current_user.admin?
+      render "layouts/admin/application"
     else
-      render "layouts/guest_sidebar"
+      render "layouts/client/application"
     end
   end
 
