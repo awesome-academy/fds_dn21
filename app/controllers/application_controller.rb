@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   private
-  
+
   def storable_location?
     request.get? && is_navigational_format? &&
       !devise_controller? && !request.xhr?
@@ -65,4 +65,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :sign_up, keys: full_attrs
     devise_parameter_sanitizer.permit :sign_in, keys: added_attrs
   end
+
 end

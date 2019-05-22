@@ -1,4 +1,4 @@
-class Admin::OrdersController < ApplicationController
+class Admin::OrdersController < Admin::AdminsController
   before_action :load_order, only: :update
   def index
     @orders = Order.all.order_by_created_time.page(params[:page]).per(

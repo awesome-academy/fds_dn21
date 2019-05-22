@@ -1,4 +1,4 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::CategoriesController < Admin::AdminsController
   before_action :load_category, only: :destroy
   before_action :load_all_categories, only: [:index, :new, :destroy]
 
